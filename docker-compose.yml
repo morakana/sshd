@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  sshd:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - SSHD_LISTEN_ADDRESS=${SSHD_LISTEN_ADDRESS}
+    image: sshd:ubuntu20.04
+    container_name: sshd
+    ports:
+      - "${SSHD_LISTEN_PORT}:22"
+    tty: true
+    init: true
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-file: '1'
+        max-size: '1m'
+
