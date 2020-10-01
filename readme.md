@@ -8,8 +8,8 @@
 <br>
 **.env**の内容を確認してください
 ```
-SSHD_LISTEN_ADDRESS=192.168.0. ＜− 待ち受け許可アドレス（hosts.allowの sshd: 192.168.0. として設定されます）
-SSHD_LISTEN_PORT=22000         ＜− 待ち受けポート（ホスト側の待ち受けポートとして設定されます）
+SSHD_LISTEN_ADDRESS=192.168.0. ＜− hosts.allowの sshd: 192.168.0. として設定されます
+SSHD_LISTEN_PORT=22000         ＜− ホスト側の待ち受けポートとして設定されます
 ```
 **docker-compose build**<br>
 で、イメージのビルドを行います<br>
