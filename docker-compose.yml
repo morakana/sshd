@@ -8,10 +8,11 @@ services:
         - SSHD_LISTEN_ADDRESS=${SSHD_LISTEN_ADDRESS}
     image: sshd:ubuntu20.04
     container_name: sshd
-    ports:
-      - "${SSHD_LISTEN_PORT}:22"
     tty: true
     init: true
+    network_mode: "bridge"
+    ports:
+      - "${SSHD_LISTEN_PORT}:22"
     restart: unless-stopped
     logging:
       driver: json-file
