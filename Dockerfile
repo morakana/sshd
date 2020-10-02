@@ -3,7 +3,7 @@ arg SSHD_LISTEN_ADDRESS
 arg SSHD_LISTEN_PORT
 run export DEBIAN_FRONTEND=noninteractive && \
   apt-get update && \
-  apt-get install -y wget curl git xauth neovim iproute2 openssh-server && \
+  apt-get install -y xauth iproute2 openssh-server && \
   sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
   sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config && \
   sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords no/' /etc/ssh/sshd_config && \
