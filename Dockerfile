@@ -1,6 +1,5 @@
 from ubuntu:20.04
 arg SSHD_LISTEN_ADDRESS
-arg SSHD_LISTEN_PORT
 run export DEBIAN_FRONTEND=noninteractive && \
   apt-get update && \
   apt-get install -y xauth iproute2 openssh-server && \
