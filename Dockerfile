@@ -13,6 +13,6 @@ run export DEBIAN_FRONTEND=noninteractive && \
   echo "root:root" | chpasswd && \
   service ssh restart && \
   apt-get clean && rm -rf /var/lib/apt/lists/*
-entrypoint ["/usr/sbin/sshd"]
-cmd ["-D"]
+entrypoint ["/usr/sbin/sshd", "-D"]
+cmd []
 
